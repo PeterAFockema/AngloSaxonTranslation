@@ -1,4 +1,4 @@
-# AngloSaxonTranslation
+# Anglo Saxon Translation
 
 ## To Install:
 ```
