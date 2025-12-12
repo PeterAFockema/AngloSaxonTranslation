@@ -1,3 +1,11 @@
+import torch
+import torch.nn as nn
+from torch import optim
+import torch.nn.functional as F
+
+import numpy as np
+from torch.utils.data import TensorDataset, DataLoader, RandomSampler
+
 class EncoderRNN(nn.Module):
     def __init__(self, input_size, hidden_size, dropout_p=0.1):
         super(EncoderRNN, self).__init__()
