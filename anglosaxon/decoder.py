@@ -6,20 +6,6 @@ import torch.nn.functional as F
 import numpy as np
 from torch.utils.data import TensorDataset, DataLoader, RandomSampler
 
-class EncoderRNN(nn.Module):
-    def __init__(self, input_size, hidden_size, dropout_p=0.1):
-        super(EncoderRNN, self).__init__()
-        self.hidden_size = hidden_size
-
-        self.embedding = nn.Embedding(input_size, hidden_size)
-        self.gru = nn.GRU(hidden_size, hidden_size, batch_first=True)
-        self.dropout = nn.Dropout(dropout_p)
-
-    def forward(self, input):
-        embedded = self.dropout(self.embedding(input))
-        output, hidden = self.gru(embedded)
-        return output, hidden
-
 class DecoderRNN(nn.Module):
     def __init__(self, hidden_size, output_size):
         super(DecoderRNN, self).__init__()
@@ -55,9 +41,3 @@ class DecoderRNN(nn.Module):
         output, hidden = self.gru(output, hidden)
         output = self.out(output)
         return output, hidden
-
-def encoderRNN(input_lang, hidden_size, device):
-    return EncoderRNN(input_lang.n_words, hidden_size).to(device)
-
-def decoderRNN(output_lang, hidden_size, device):
-    return AttnDecoderRNN(hidden_size, output_lang.n_words).to(device)
