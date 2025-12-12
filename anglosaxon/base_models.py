@@ -55,3 +55,9 @@ class DecoderRNN(nn.Module):
         output, hidden = self.gru(output, hidden)
         output = self.out(output)
         return output, hidden
+
+def encoderRNN(input_lang, hidden_size, device):
+    return EncoderRNN(input_lang.n_words, hidden_size).to(device)
+
+def decoderRNN(output_lang, hidden_size, device):
+    return AttnDecoderRNN(hidden_size, output_lang.n_words).to(device)
