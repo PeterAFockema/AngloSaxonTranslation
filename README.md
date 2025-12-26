@@ -1,5 +1,8 @@
 # Anglo Saxon Translation
 
+## About:
+This is a package repository to place code that can be used in a process for translating Old English into modern English.
+
 ## To Install:
 ```
 pip install git+https://github.com/PeterAFockema/AngloSaxonTranslation.git	
