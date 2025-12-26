@@ -1,4 +1,4 @@
-from .language_helpers import anglosaxon_langs
+from src.anglosaxon.language_helpers import anglosaxon_lang
 
 def return_Langs_object(self, name:str):
-    return Lang(name)
+    return anglosaxon_lang.Lang(name)
