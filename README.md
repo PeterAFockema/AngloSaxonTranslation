@@ -2,6 +2,7 @@
 
 ## About:
 This is a package repository to place code that can be used in a process for translating Old English into modern English.
+This codebase has been developed in conjuction with https://github.com/PeterAFockema/NorthernArchaicLanguageTranslation.git
 
 ## To Install:
 ```
